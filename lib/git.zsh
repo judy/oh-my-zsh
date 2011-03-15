@@ -2,7 +2,7 @@
 function git_prompt_info() {
   ref=$(git symbolic-ref HEAD 2> /dev/null) || return
   branch=${ref#refs/heads/}
-  echo "$ZSH_THEME_GIT_PROMPT_PREFIX$branch$(parse_git_dirty)$ZSH_THEME_GIT_PROMPT_SUFFIX"
+  echo "$ZSH_THEME_GIT_PROMPT_PREFIX$(parse_git_dirty)$branch$ZSH_THEME_GIT_PROMPT_SUFFIX"
 }
 
 parse_git_dirty () {
